@@ -3,118 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>NAVERA STORE</title>
 
 <link rel="stylesheet" href="style.css">
-</head>
 
+</head>
 <body>
 
-<div class="container">
+<div class="app">
 
-<h1 class="logo">
-NAVERA STORE
-</h1>
+<!-- HOME -->
+<section id="homePage" class="page active">
 
-<div class="loginBox">
+<div class="hero">
+<div class="badge">TRUSTED SELLER</div>
+<div class="badge">ONLINE 24 JAM</div>
 
-<img
-id="userPhoto"
-class="avatar"
-src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+<h1>NAVERA STORE</h1>
 
-<h2 id="userName">
-Belum Login
-</h2>
+<p>Digital Product & Services</p>
 
-<button
-id="loginBtn"
-onclick="loginGoogle()">
-Login Google
-</button>
+</div>
 
-<button
-id="logoutBtn"
-onclick="logoutGoogle()">
-Logout
+<div class="stats">
+
+<div class="card">
+<h2>500+</h2>
+<p>Orders</p>
+</div>
+
+<div class="card">
+<h2>300+</h2>
+<p>Customers</p>
+</div>
+
+<div class="card">
+<h2>4.9★</h2>
+<p>Rating</p>
+</div>
+
+</div>
+
+<div class="card">
+<h3>🔥 Promo Hari Ini</h3>
+<p>Diskon spesial dan pelayanan cepat.</p>
+</div>
+
+<div class="card">
+<h3>⭐ Review Pelanggan</h3>
+<p>⭐⭐⭐⭐⭐ Fast respon dan ramah.</p>
+<p>⭐⭐⭐⭐⭐ Trusted seller.</p>
+<p>⭐⭐⭐⭐⭐ Produk sesuai deskripsi.</p>
+</div>
+
+</section>
+
+<!-- STORE -->
+<section id="storePage" class="page">
+
+<h2>🛍 Store</h2>
+
+<div class="card">
+
+<h3>Panel Pterodactyl</h3>
+
+<select id="panel">
+<option value="1GB|1000">1GB - Rp1.000</option>
+<option value="2GB|2000">2GB - Rp2.000</option>
+<option value="3GB|3000">3GB - Rp3.000</option>
+<option value="4GB|4000">4GB - Rp4.000</option>
+<option value="Unlimited|5000">Unlimited - Rp5.000</option>
+</select>
+
+<button class="btn" onclick="buyPanel()">
+Beli
 </button>
 
 </div>
 
-<div class="saldoBox">
+<div class="card">
 
-<h3>Saldo</h3>
+<h3>Script Bot WA</h3>
+
+<select id="script">
+<option value="Free|0">Free - Rp0</option>
+<option value="Premium|10000">Premium - Rp10.000</option>
+<option value="Reseller|25000">Reseller - Rp25.000</option>
+</select>
+
+<button class="btn" onclick="buyScript()">
+Beli
+</button>
+
+</div>
+
+</section>
+
+<!-- SALDO -->
+<section id="saldoPage" class="page">
+
+<h2>💰 Saldo Saya</h2>
+
+<div class="card">
 
 <h1 id="saldoText">
 Rp0
 </h1>
 
-</div>
-
-<div class="menu">
-
-<button onclick="showPage('home')">
-Home
-</button>
-
-<button onclick="showPage('store')">
-Store
-</button>
-
-<button onclick="showPage('history')">
-Riwayat
-</button>
-
-<button onclick="showPage('account')">
-Akun
-</button>
-
-</div>
-
-<div id="home" class="page">
-
-<h2>Selamat Datang</h2>
-
 <p>
-NAVERA STORE V1 Firebase
+Saldo tersimpan pada akun.
 </p>
 
 </div>
 
-<div id="store" class="page">
-
-<h2>Store</h2>
-
 <div class="card">
 
-<h3>Panel 1GB</h3>
+<h3>Top Up Simulasi</h3>
 
-<p>Rp1.000</p>
+<button class="btn" onclick="topup(5000)">
++ Rp5.000
+</button>
 
-<button>
-Beli
+<button class="btn" onclick="topup(10000)">
++ Rp10.000
+</button>
+
+<button class="btn" onclick="topup(20000)">
++ Rp20.000
+</button>
+
+<button class="btn" onclick="topup(50000)">
++ Rp50.000
 </button>
 
 </div>
 
+  </section>
+
+  <!-- RIWAYAT -->
+<section id="historyPage" class="page">
+
+<h2>📜 Riwayat</h2>
+
 <div class="card">
-
-<h3>Panel Unlimited</h3>
-
-<p>Rp10.000</p>
-
-<button>
-Beli
-</button>
-
-</div>
-
-</div>
-
-<div id="history" class="page">
-
-<h2>Riwayat</h2>
 
 <div id="historyList">
 
@@ -124,20 +155,134 @@ Belum ada transaksi
 
 </div>
 
-<div id="account" class="page">
+</section>
 
-<h2>Akun</h2>
+<!-- AKUN -->
+<section id="accountPage" class="page">
 
-<p id="emailText">
+<h2>👤 Akun Saya</h2>
+
+<div class="card accountCard">
+
+<img
+id="userPhoto"
+class="avatar"
+src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+<h3 id="userName">
+Belum Login
+</h3>
+
+<p id="userEmail">
 -
 </p>
 
+<button
+id="loginBtn"
+class="btn"
+onclick="loginGoogle()">
+
+Login Google
+
+</button>
+
+<button
+id="logoutBtn"
+class="btn"
+onclick="logoutGoogle()">
+
+Logout
+
+</button>
+
 </div>
+
+</section>
+
+<!-- POPUP CHECKOUT -->
+
+<div class="popup" id="popup">
+
+<div class="box">
+
+<h2>Checkout</h2>
+
+<p id="checkoutInfo"></p>
+
+<br>
+
+<button
+class="btn"
+onclick="confirmBuy()">
+
+Beli Sekarang
+
+</button>
+
+<br><br>
+
+<button
+class="btn closeBtn"
+onclick="closePopup()">
+
+Batal
+
+</button>
+
+</div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<div class="bottomNav">
+
+<button
+id="navHome"
+onclick="openPage('homePage')">
+
+🏠<br>Home
+
+</button>
+
+<button
+id="navStore"
+onclick="openPage('storePage')">
+
+🛍️<br>Store
+
+</button>
+
+<button
+id="navSaldo"
+onclick="openPage('saldoPage')">
+
+💰<br>Saldo
+
+</button>
+
+<button
+id="navHistory"
+onclick="openPage('historyPage')">
+
+📜<br>Riwayat
+
+</button>
+
+<button
+id="navAccount"
+onclick="openPage('accountPage')">
+
+👤<br>Akun
+
+</button>
 
 </div>
 
 <script type="module" src="firebase.js"></script>
 <script src="script.js"></script>
 
+</div>
+
 </body>
-</html>
+  </html>
