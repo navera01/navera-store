@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NAVERA STORE</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="logo">
+NAVERA STORE
+</h1>
+
+<div class="loginBox">
+
+<img
+id="userPhoto"
+class="avatar"
+src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+<h2 id="userName">
+Belum Login
+</h2>
+
+<button
+id="loginBtn"
+onclick="loginGoogle()">
+Login Google
+</button>
+
+<button
+id="logoutBtn"
+onclick="logoutGoogle()">
+Logout
+</button>
+
+</div>
+
+<div class="saldoBox">
+
+<h3>Saldo</h3>
+
+<h1 id="saldoText">
+Rp0
+</h1>
+
+</div>
+
+<div class="menu">
+
+<button onclick="showPage('home')">
+Home
+</button>
+
+<button onclick="showPage('store')">
+Store
+</button>
+
+<button onclick="showPage('history')">
+Riwayat
+</button>
+
+<button onclick="showPage('account')">
+Akun
+</button>
+
+</div>
+
+<div id="home" class="page">
+
+<h2>Selamat Datang</h2>
+
+<p>
+NAVERA STORE V1 Firebase
+</p>
+
+</div>
+
+<div id="store" class="page">
+
+<h2>Store</h2>
+
+<div class="card">
+
+<h3>Panel 1GB</h3>
+
+<p>Rp1.000</p>
+
+<button>
+Beli
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Panel Unlimited</h3>
+
+<p>Rp10.000</p>
+
+<button>
+Beli
+</button>
+
+</div>
+
+</div>
+
+<div id="history" class="page">
+
+<h2>Riwayat</h2>
+
+<div id="historyList">
+
+Belum ada transaksi
+
+</div>
+
+</div>
+
+<div id="account" class="page">
+
+<h2>Akun</h2>
+
+<p id="emailText">
+-
+</p>
+
+</div>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
